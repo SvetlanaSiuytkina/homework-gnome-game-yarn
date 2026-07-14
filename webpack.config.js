@@ -2,6 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { type } from 'os';
 
 const filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(filename);
@@ -21,16 +22,16 @@ export default {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   devServer: {
     static: [
       {
         directory: path.resolve(__dirname, 'dist'),
-      },
-      {
-        directory: path.resolve(__dirname, 'public'),
-        publicPath: '/',
       },
     ],
     port: 8080,

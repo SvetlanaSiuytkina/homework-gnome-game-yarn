@@ -7,8 +7,18 @@ export class Game {
     this.board = new Board(4, 4);
     this.goblin = new Goblin();
     this.score = new Score(5);
+  }
 
-    this.startRound()
+  start() {
+    this.continueRound();
+  }
+
+  continueRound() {
+    if (this.score.gameOver) {
+      return;
+    }
+
+    this.startRound();
   }
 
   startRound() {
@@ -19,6 +29,8 @@ export class Game {
       } else {
         this.score.addMiss();
       }
+
+      this.continueRound();
     }
 
     this.goblin.createGoblin(cell, onGoblinHit);

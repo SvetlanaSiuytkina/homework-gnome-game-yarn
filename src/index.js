@@ -1,5 +1,6 @@
 import { Game } from './Game.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    new Game();
-})
+  const game = new Game();
+  game.start();
+});

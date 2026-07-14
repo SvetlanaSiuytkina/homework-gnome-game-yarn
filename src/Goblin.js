@@ -1,3 +1,5 @@
+import goblinImg from './images/goblin.png';
+
 export class Goblin {
   constructor() {
     this.element = null;
@@ -10,7 +12,7 @@ export class Goblin {
 
     this.currentCell = cell;
     this.element = document.createElement('img');
-    this.element.src = '/goblin.png';
+    this.element.src = goblinImg;
     this.element.className = 'gnome';
     
     this.element.addEventListener('click', () => {
