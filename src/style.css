@@ -1,5 +1,13 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.score-board, .misses-board {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .game-board {
@@ -15,10 +23,7 @@ body {
   background-color: blueviolet;
   position: relative;
   height: 100px; 
-}
-
-.game-board, .cell, .gnome {
-  cursor: url(../image/molot.png);
+  cursor: url('images/molot.png') 8 8, crosshair;
 }
 
 .gnome {
@@ -27,9 +32,5 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.score-board, .misses-board {
-  font-size: 10px;
-  margin-bottom: 10px;
+  pointer-events: auto;
 }

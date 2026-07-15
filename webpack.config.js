@@ -2,19 +2,19 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { type } from 'os';
 
 const filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(filename);
 
 export default {
-  mode: 'development',
+  mode: 'production',
   target: 'web',
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath: ''
   },
   module: {
     rules: [
